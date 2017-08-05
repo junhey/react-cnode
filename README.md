@@ -15,6 +15,7 @@ npm install react-router --save
 npm install redux --save
 npm install element-react --save
 npm install element-theme-default --save
+npm install sass-loader node-sass --save-dev
 ```
 
 
