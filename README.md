@@ -11,8 +11,10 @@ create-react-app的[README](https://github.com/facebookincubator/create-react-ap
 
 #2 安装制作过程中需要的插件
 ```
-npm install -save react-router
-npm install -save redux
+npm install react-router --save 
+npm install redux --save
+npm install element-react --save
+npm install element-theme-default --save
 ```
 
 
