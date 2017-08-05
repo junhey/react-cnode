@@ -144,11 +144,17 @@ module.exports = {
           /\.gif$/,
           /\.jpe?g$/,
           /\.png$/,
+          /\.scss$/,
         ],
         loader: require.resolve('file-loader'),
         options: {
           name: 'static/media/[name].[hash:8].[ext]',
         },
+      },
+      //load scss
+      {
+        test:/\.sass$/,
+        loader:'style!css!postcss!sass?outputStyle=expanded'
       },
       // "url" loader works like "file" loader except that it embeds assets
       // smaller than specified limit in bytes as data URLs to avoid requests.
