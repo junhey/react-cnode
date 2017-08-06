@@ -52,7 +52,14 @@ npm install element-theme-default --save
 4. cnode列表页
 
 
-参考文档
+5. 踩坑记录
+
+- 报错"react-router" does not contain an export named "IndexRoute"
+
+检查一下react-router的版本，@4.x对于api的变动比较大，这个用法在@3.x里面是可以用的。
+react-router 4.0.0 版本上使用creat-react-app会出现问题，换成```"react-router": "^2.8.1",```就好了
+
+6. 参考文档
 
 [react官方文档](https://facebook.github.io/react/)
 

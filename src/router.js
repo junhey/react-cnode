@@ -12,11 +12,10 @@ class routes extends React.Component {
 	render() {
 		return (
 			<Router history={hashHistory}>
-				<Route path='/' component={List}>
-					<IndexRoute component={List}/>
-					<Route path='/topic/:id' component={Topic}></Route>
-					<Route path='/login' component={Login}></Route>
-				</Route>	
+				<IndexRoute component={Topic}/>
+                <Route path='/' component={List}></Route>
+			    <Route path='/topic/:id' component={Topic}></Route>
+				<Route path='/login' component={Login}></Route>
 			</Router>
 
 		)

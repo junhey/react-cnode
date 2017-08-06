@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React,{ Component } from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from 'element-react';
 
-class App extends Component {
+
+import 'element-theme-default';
+
+class List extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          List page
-        </p>
-      </div>
+      <Button type="primary">Hello</Button>
     );
   }
 }
 
-export default App;
+export default List;

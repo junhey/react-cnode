@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import '../App.css';
 
-class App extends Component {
+class Topic extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
         <p className="App-intro">
-          Topic page
+          Topic
         </p>
       </div>
     );
   }
 }
 
-export default App;
+export default Topic;
