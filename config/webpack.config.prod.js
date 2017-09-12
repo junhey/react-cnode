@@ -118,7 +118,7 @@ module.exports = {
           {
             options: {
               formatter: eslintFormatter,
-              
+              useEslintrc: true
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -143,11 +143,24 @@ module.exports = {
           /\.gif$/,
           /\.jpe?g$/,
           /\.png$/,
+          /\.scss$/,
         ],
         loader: require.resolve('file-loader'),
         options: {
           name: 'static/media/[name].[hash:8].[ext]',
         },
+      },
+      //load scss
+      {
+        test:/\.sass$/,
+        //loader:'style!css!postcss!sass?outputStyle=expanded'
+        use:[{
+          loader:'style-loader'
+        },{
+          loader:'css-loader'
+        },{
+          loader:'sass-loader'
+        }]
       },
       // "url" loader works just like "file" loader but it also embeds
       // assets smaller than specified size as data URLs to avoid requests.

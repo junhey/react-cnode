@@ -118,9 +118,11 @@ module.exports = {
           {
             options: {
               formatter: eslintFormatter,
-              
+              useEslintrc: true,
+              presets: ["es2015","react"]
             },
             loader: require.resolve('eslint-loader'),
+            
           },
         ],
         include: paths.appSrc,
@@ -154,7 +156,20 @@ module.exports = {
       //load scss
       {
         test:/\.sass$/,
-        loader:'style!css!postcss!sass?outputStyle=expanded'
+        // loader:'style!css!postcss!sass?outputStyle=expanded'
+        loaders: [
+          require.resolve('style-loader'),
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: require.resolve('sass-loader'),
+            
+          },
+        ]
       },
       // "url" loader works like "file" loader except that it embeds assets
       // smaller than specified limit in bytes as data URLs to avoid requests.
@@ -178,6 +193,7 @@ module.exports = {
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
           cacheDirectory: true,
+          presets: ["es2015","react"]
         },
       },
       // "postcss" loader applies autoprefixer to our CSS.
