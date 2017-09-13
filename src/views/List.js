@@ -24,6 +24,13 @@ class List extends Component {
             mdrender: true
         }
       };
+      this.changeTab=this.changeTab.bind(this);
+  }
+  componentDidMount(){
+    //初始化数据
+    this.getList();
+    // 滚动加载
+    $(window).on('scroll', utils.throttle(this.getScrollData, 300, 1000));
   }
   getList(){
     let _this=this;
@@ -35,7 +42,7 @@ class List extends Component {
             //_this.listData=res.data.data;
             if (res && res.data) {
                 console.log(res.data.data);
-                res.data.data.forEach(_this.mergeTopics);
+                //res.data.data.forEach(_this.mergeTopics);
             }
         }else{
             console.log('网络错误');
@@ -71,6 +78,7 @@ class List extends Component {
       this.setState({
         searchKey:searchKey
       });
+      console.log(JSON.stringify(searchKey));
       this.getList();
   }
   getScrollData(){
@@ -87,16 +95,11 @@ class List extends Component {
           }
       }
   }
-  componentDidMount(){
-    //初始化数据
-    this.getList();
-    // 滚动加载
-    $(window).on('scroll', utils.throttle(this.getScrollData, 300, 1000));
-  }
+  
   render() {
     return (
       <div>
-        <ListHeader />
+        <ListHeader changeTab={this.changeTab} />
       </div>
     );
   }

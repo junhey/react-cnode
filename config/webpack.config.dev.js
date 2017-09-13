@@ -155,7 +155,7 @@ module.exports = {
       },
       //load scss
       {
-        test:/\.sass$/,
+        test:/\.scss$/,
         // loader:'style!css!postcss!sass?outputStyle=expanded'
         loaders: [
           require.resolve('style-loader'),
