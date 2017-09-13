@@ -12,7 +12,7 @@ class ListHeader extends React.Component{
     }
     selectTab(e){
         let navSelect=e.target.getAttribute('data-navSelect');
-        //this.props.changeTab(this.state.navSelect);
+        this.props.changeTab(this.state.navSelect);
         console.log(JSON.stringify(this.props));
         console.log(navSelect);
     }

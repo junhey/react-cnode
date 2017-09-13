@@ -66,35 +66,36 @@ class List extends Component {
   }
   changeTab(tab){
       // 如果是当前页面切换分类的情况
-      let searchKey=this.state.searchKey;
-      if (tab) {
-        searchKey.tab=tab;
-        this.setState({
-          listData:[],
-          index:{}
-        })
-      }
-      searchKey.page=1;
-      this.setState({
-        searchKey:searchKey
-      });
-      console.log(JSON.stringify(searchKey));
-      this.getList();
+      console.log(tab);
+      // let searchKey=this.state.searchKey;
+      // if (tab) {
+      //   searchKey.tab=tab;
+      //   this.setState({
+      //     listData:[],
+      //     index:{}
+      //   })
+      // }
+      // searchKey.page=1;
+      // this.setState({
+      //   searchKey:searchKey
+      // });
+      // console.log(JSON.stringify(searchKey));
+      // this.getList();
   }
-  getScrollData(){
-      if(this.state.scroll){
-          let totalheight=parseInt($(window).height(),20)+parseInt($(window).scrollTop(),20);
-          if($(document).height()<=totalheight+200){
-            let searchKey=this.state.searchKey;
-            searchKey.page+=1;
-            this.setState({
-              scroll:false,
-              searchKey:searchKey
-            });
-            this.getList();
-          }
-      }
-  }
+  // getScrollData(){
+  //     if(this.state.scroll){
+  //         let totalheight=parseInt($(window).height(),20)+parseInt($(window).scrollTop(),20);
+  //         if($(document).height()<=totalheight+200){
+  //           let searchKey=this.state.searchKey;
+  //           searchKey.page+=1;
+  //           this.setState({
+  //             scroll:false,
+  //             searchKey:searchKey
+  //           });
+  //           this.getList();
+  //         }
+  //     }
+  // }
   
   render() {
     return (
