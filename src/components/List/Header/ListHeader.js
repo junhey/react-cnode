@@ -6,15 +6,15 @@ class ListHeader extends React.Component{
         this.state={
             navSelect:'all'
         }
-        console.log(JSON.stringify(this.props));
         //先bind类中方法
         this.selectTab = this.selectTab.bind(this)
     }
     selectTab(e){
         let navSelect=e.target.getAttribute('data-navSelect');
-        this.props.changeTab(this.state.navSelect);
-        console.log(JSON.stringify(this.props));
-        console.log(navSelect);
+        this.setState({
+            navSelect:navSelect
+        });
+        this.props.changeTab(navSelect);
     }
     render(){
         return (
